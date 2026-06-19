@@ -1,8 +1,7 @@
-import os  # IMPORTANT: Fixes the 'os is not defined' error!
+import os 
 import chromadb
 from pypdf import PdfReader
 
-# Create ChromaDB client
 client = chromadb.PersistentClient(
     path="./chroma_db"
 )
@@ -43,7 +42,7 @@ def add_document(name, text):
     ]
 
     metadatas = [
-        {"source": clean_name}  # Ensures metadata is ALWAYS a clean string ✅
+        {"source": clean_name}  
         for _ in chunks
     ]
 
